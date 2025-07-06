@@ -1,5 +1,5 @@
-use crate::{config::get_db_url, models::user_model::User};
-use sqlx::postgres::{PgPool, PgPoolOptions};
+use crate::models::user_model::User;
+use sqlx::postgres::PgPool;
 
 /// 根据用户ID获取用户信息
 ///

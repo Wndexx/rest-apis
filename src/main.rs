@@ -4,7 +4,6 @@ use crate::{
     config::{get_db_url, load_config},
     routes::app_routes,
 };
-use axum::{Router, routing::get};
 use sqlx::{PgPool, postgres::PgPoolOptions};
 
 mod config;
