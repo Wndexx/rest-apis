@@ -30,6 +30,16 @@ async fn get_user_handler(Path(id): Path<i32>, State(state): State<Arc<AppState>
     }
 }
 
+async fn hello() -> Json<User> {
+    Json(User {
+        id: 0,
+        name: "N/A".to_string(),
+        email: "".to_string(),
+    })
+}
+
 pub fn user_router() -> Router<Arc<AppState>> {
-    Router::new().route("/users/{id}", get(get_user_handler))
+    Router::new()
+        .route("/users/{id}", get(get_user_handler))
+        .route("/hello", get(hello))
 }
